@@ -12,7 +12,8 @@ class OpeningPage extends StatefulWidget {
 class _OpeningPageState extends State<OpeningPage> {
   Future<void> setup(context) async {
     await Future.delayed(Duration(seconds: 2));
-    Navigator.pushReplacementNamed(context, '/SegnaPunti');
+    globals.number_of_players = 4;
+    Navigator.pushReplacementNamed(context, '/ChooseType');
   }
 
   @override
