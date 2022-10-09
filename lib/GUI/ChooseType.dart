@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/src/widgets/container.dart';
 import 'package:mtg/GUI/ChooseType.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +25,8 @@ class ChooseType extends StatefulWidget {
 }
 
 class _ChooseTypeState extends State<ChooseType> {
+  late TextEditingController _Life_value;
+
   var choosen = 4;
   var chooser = <BasicTile>[
     BasicTile(title: 4, list: [
@@ -47,17 +51,109 @@ class _ChooseTypeState extends State<ChooseType> {
   @override
   void initState() {
     // TODO: implement initState
+    _Life_value = TextEditingController();
+    _Life_value.text = globals.life_points.toString();
     super.initState();
     // myBanner.load();
   }
 
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 7, 19, 99),
       backgroundColor: Color.fromARGB(255, 209, 204, 204),
-      body: ListView(
-        children: chooser.map(buildTile).toList(),
+      body: Column(
+        children: <Widget>[
+          // SizedBox(
+          //   height: h / 7,
+          //   width: w / 3,
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: TextField(
+          //       controller: _Life_value,
+          //       style: TextStyle(
+          //         color: Colors.white,
+          //       ),
+          //       cursorColor: Colors.white,
+          //       // obscureText: true,
+          //       decoration: InputDecoration(
+          //           labelStyle: TextStyle(color: Colors.white),
+          //           helperStyle: TextStyle(color: Colors.white),
+          //           fillColor: Colors.white,
+          //           hoverColor: Colors.white,
+          //           focusColor: Colors.white,
+          //           border: OutlineInputBorder(
+          //               borderSide: BorderSide(width: 1.0, color: Colors.white),
+          //               borderRadius: BorderRadius.all(Radius.circular(5))),
+          //           enabledBorder: OutlineInputBorder(
+          //               borderSide: BorderSide(width: 1.0, color: Colors.white),
+          //               borderRadius: BorderRadius.all(Radius.circular(5))),
+          //           labelText: "Life"),
+          //       onChanged: (text) {
+          //         globals.life_points = int.parse(_Life_value.text);
+          //       },
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: h / 7,
+          //   width: w / 3,
+          //   child: TextButton(
+          //     onPressed: () {},
+          //     child: Text("Play"),
+          //   ),
+          // ),
+          // ExpansionTile(
+          //   title: ListTile(
+          //     title: Text(
+          //       choosen.toString(),
+          //     ),
+          //   ),
+          //   children: <Widget>[
+          //     ListTile(
+          //       title: Text(chooser[0].list[0].title.toString()),
+          //       onTap: () {
+          //         setState(() {
+          //           choosen = chooser[0].list[0].title;
+          //           globals.number_of_players = choosen;
+          //         });
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text(chooser[0].list[1].title.toString()),
+          //       onTap: () {
+          //         setState(() {
+          //           choosen = chooser[0].list[1].title;
+          //           globals.number_of_players = choosen;
+          //         });
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text(chooser[0].list[2].title.toString()),
+          //       onTap: () {
+          //         setState(() {
+          //           choosen = chooser[0].list[2].title;
+          //           globals.number_of_players = choosen;
+          //         });
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text(chooser[0].list[3].title.toString()),
+          //       onTap: () {
+          //         setState(() {
+          //           choosen = chooser[0].list[3].title;
+          //           globals.number_of_players = choosen;
+          //         });
+          //       },
+          //     ),
+          //   ],
+          // )
+          // ListView(
+          //   children: chooser.map(buildTile).toList(),
+          // ),
+        ],
       ),
     );
   }
