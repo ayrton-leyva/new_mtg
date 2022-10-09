@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/src/widgets/container.dart';
 import 'package:mtg/GUI/ChooseType.dart';
 import 'package:flutter/material.dart';
@@ -63,98 +61,162 @@ class _ChooseTypeState extends State<ChooseType> {
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 7, 19, 99),
-      backgroundColor: Color.fromARGB(255, 209, 204, 204),
-      body: Column(
-        children: <Widget>[
-          // SizedBox(
-          //   height: h / 7,
-          //   width: w / 3,
-          //   child: Padding(
-          //     padding: const EdgeInsets.all(8.0),
-          //     child: TextField(
-          //       controller: _Life_value,
-          //       style: TextStyle(
-          //         color: Colors.white,
-          //       ),
-          //       cursorColor: Colors.white,
-          //       // obscureText: true,
-          //       decoration: InputDecoration(
-          //           labelStyle: TextStyle(color: Colors.white),
-          //           helperStyle: TextStyle(color: Colors.white),
-          //           fillColor: Colors.white,
-          //           hoverColor: Colors.white,
-          //           focusColor: Colors.white,
-          //           border: OutlineInputBorder(
-          //               borderSide: BorderSide(width: 1.0, color: Colors.white),
-          //               borderRadius: BorderRadius.all(Radius.circular(5))),
-          //           enabledBorder: OutlineInputBorder(
-          //               borderSide: BorderSide(width: 1.0, color: Colors.white),
-          //               borderRadius: BorderRadius.all(Radius.circular(5))),
-          //           labelText: "Life"),
-          //       onChanged: (text) {
-          //         globals.life_points = int.parse(_Life_value.text);
-          //       },
-          //     ),
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: h / 7,
-          //   width: w / 3,
-          //   child: TextButton(
-          //     onPressed: () {},
-          //     child: Text("Play"),
-          //   ),
-          // ),
-          // ExpansionTile(
-          //   title: ListTile(
-          //     title: Text(
-          //       choosen.toString(),
-          //     ),
-          //   ),
-          //   children: <Widget>[
-          //     ListTile(
-          //       title: Text(chooser[0].list[0].title.toString()),
-          //       onTap: () {
-          //         setState(() {
-          //           choosen = chooser[0].list[0].title;
-          //           globals.number_of_players = choosen;
-          //         });
-          //       },
-          //     ),
-          //     ListTile(
-          //       title: Text(chooser[0].list[1].title.toString()),
-          //       onTap: () {
-          //         setState(() {
-          //           choosen = chooser[0].list[1].title;
-          //           globals.number_of_players = choosen;
-          //         });
-          //       },
-          //     ),
-          //     ListTile(
-          //       title: Text(chooser[0].list[2].title.toString()),
-          //       onTap: () {
-          //         setState(() {
-          //           choosen = chooser[0].list[2].title;
-          //           globals.number_of_players = choosen;
-          //         });
-          //       },
-          //     ),
-          //     ListTile(
-          //       title: Text(chooser[0].list[3].title.toString()),
-          //       onTap: () {
-          //         setState(() {
-          //           choosen = chooser[0].list[3].title;
-          //           globals.number_of_players = choosen;
-          //         });
-          //       },
-          //     ),
-          //   ],
-          // )
-          // ListView(
-          //   children: chooser.map(buildTile).toList(),
-          // ),
-        ],
-      ),
+      backgroundColor: Color.fromARGB(255, 48, 111, 150),
+      body: Stack(children: <Widget>[
+        Positioned(
+          left: w / 4,
+          top: h / 6,
+          // bottom: 10,
+          // height: 150,
+          width: w / 2,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Number of Players",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              SizedBox(
+                width: w,
+                child: Container(
+                  color: Colors.white,
+                  child: ExpansionTile(
+                    title: ListTile(
+                      title: Text(
+                        choosen.toString(),
+                      ),
+                    ),
+                    children: <Widget>[
+                      ListTile(
+                        title: Text(chooser[0].list[0].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[0].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[1].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[1].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[2].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[2].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[3].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[3].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[4].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[4].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[5].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[5].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[6].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[6].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                      ListTile(
+                        title: Text(chooser[0].list[7].title.toString()),
+                        onTap: () {
+                          setState(() {
+                            choosen = chooser[0].list[7].title;
+                            globals.number_of_players = choosen;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        // Column(
+        //   children: <Widget>[
+        //     SizedBox(
+        //       height: h / 7,
+        //       width: w / 3,
+        //       child: Padding(
+        //         padding: const EdgeInsets.all(8.0),
+        //         child: TextField(
+        //           controller: _Life_value,
+        //           style: TextStyle(
+        //             color: Colors.white,
+        //           ),
+        //           cursorColor: Colors.white,
+        //           // obscureText: true,
+        //           decoration: InputDecoration(
+        //               labelStyle: TextStyle(color: Colors.white),
+        //               helperStyle: TextStyle(color: Colors.white),
+        //               fillColor: Colors.white,
+        //               hoverColor: Colors.white,
+        //               focusColor: Colors.white,
+        //               border: OutlineInputBorder(
+        //                   borderSide:
+        //                       BorderSide(width: 1.0, color: Colors.white),
+        //                   borderRadius: BorderRadius.all(Radius.circular(5))),
+        //               enabledBorder: OutlineInputBorder(
+        //                   borderSide:
+        //                       BorderSide(width: 1.0, color: Colors.white),
+        //                   borderRadius: BorderRadius.all(Radius.circular(5))),
+        //               labelText: "Life"),
+        //           onChanged: (text) {
+        //             globals.life_points = int.parse(_Life_value.text);
+        //           },
+        //         ),
+        //       ),
+        //     ),
+        //     SizedBox(
+        //       height: h / 11,
+        //       width: w / 3,
+        //       child: TextButton(
+        //         onPressed: () {},
+        //         child: Text("Play"),
+        //       ),
+        //     ),
+        //     // ListView(
+        //     //   children: chooser.map(buildTile).toList(),
+        //     // ),
+        //   ],
+        // ),
+      ]),
     );
   }
 
