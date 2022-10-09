@@ -4,22 +4,16 @@ import 'package:mtg/Services/Players.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SegnaPunti extends StatefulWidget {
-  const SegnaPunti({super.key});
+  List<bool> players;
+  SegnaPunti({
+    required this.players,
+  });
 
   @override
   State<SegnaPunti> createState() => _SegnaPuntiState();
 }
 
 class _SegnaPuntiState extends State<SegnaPunti> {
-  bool _one_players = true;
-  bool _two_players = false;
-  bool _three_players = false;
-  bool _four_players = false;
-  bool _five_players = false;
-  bool _six_players = false;
-  bool _seven_players = false;
-  bool _eight_players = false;
-
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -34,7 +28,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // One Player
 
           Visibility(
-            visible: _one_players,
+            visible: widget.players[0],
             child: new Container(
               alignment: Alignment.center,
               color: Colors.white,
@@ -58,7 +52,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Two Players
 
           Visibility(
-            visible: _two_players,
+            visible: widget.players[1],
             child: new Container(
               alignment: Alignment.center,
               color: Colors.white,
@@ -95,7 +89,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Three Players
 
           Visibility(
-            visible: _three_players,
+            visible: widget.players[2],
             child: new Container(
               alignment: Alignment.center,
               // color: Colors.white,
@@ -154,7 +148,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Four Players
 
           Visibility(
-            visible: _four_players,
+            visible: widget.players[3],
             child: new Container(
               alignment: Alignment.center,
               // color: Colors.white,
@@ -231,7 +225,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Five Players
 
           Visibility(
-            visible: _five_players,
+            visible: widget.players[4],
             child: new Container(
               alignment: Alignment.center,
               // color: Colors.white,
@@ -325,7 +319,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Six Players
 
           Visibility(
-            visible: _six_players,
+            visible: widget.players[5],
             child: new Container(
               alignment: Alignment.center,
               // color: Colors.white,
@@ -440,7 +434,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Seven Players
 
           Visibility(
-            visible: _seven_players,
+            visible: widget.players[6],
             child: new Container(
               alignment: Alignment.center,
               // color: Colors.white,
@@ -557,7 +551,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
           // Eight Players
 
           Visibility(
-            visible: _eight_players,
+            visible: widget.players[7],
             child: new Container(
               alignment: Alignment.center,
               // color: Colors.white,
