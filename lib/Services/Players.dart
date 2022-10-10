@@ -6,6 +6,8 @@ class Player {
 
   // Special counters
   int storm = 0;
+
+  // permanent counters
   int energy = 0;
   int experience = 0;
   int poison = 0;

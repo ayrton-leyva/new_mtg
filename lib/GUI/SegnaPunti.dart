@@ -15,6 +15,7 @@ class SegnaPunti extends StatefulWidget {
 }
 
 class _SegnaPuntiState extends State<SegnaPunti> {
+  late PageController _controller_first;
   Player first = Player(
       lifepoints: globals.life_points,
       number_players: globals.number_of_players);
@@ -39,6 +40,14 @@ class _SegnaPuntiState extends State<SegnaPunti> {
   Player eighth = Player(
       lifepoints: globals.life_points,
       number_players: globals.number_of_players);
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _controller_first = PageController(initialPage: 0);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -60,13 +69,32 @@ class _SegnaPuntiState extends State<SegnaPunti> {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                    child: LifePanel(
-                      image: "assets/Black.svg",
-                      backGround: Color.fromARGB(255, 48, 48, 48),
-                      text: Color.fromARGB(255, 232, 231, 231),
-                      player: first,
-                      height: h,
-                      width: w,
+                    child: PageView(
+                      controller: _controller_first,
+                      onPageChanged: (page) {
+                        // Commander page
+                        // Maniera custom di segnare i commander damage
+                        // considerare il caso in cui resettare la posizione voluto
+                        if (page == 2) {
+                          setState(() {
+                            // _controller_first.
+                          });
+                        }
+                      },
+                      children: <Widget>[
+                        LifePanel(
+                          image: "assets/Black.svg",
+                          backGround: Color.fromARGB(255, 48, 48, 48),
+                          text: Color.fromARGB(255, 232, 231, 231),
+                          player: first,
+                          height: h,
+                          width: w,
+                        ),
+                        Container(
+                          color: Colors.white,
+                          child: Text("new Page"),
+                        ),
+                      ],
                     ),
                   )
                 ],
