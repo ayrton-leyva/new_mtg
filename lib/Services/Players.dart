@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Player {
   int number_players;
   int lifepoints;
+  int command_tax = 0;
 
   // Special counters
   int storm = 0;
@@ -23,11 +24,8 @@ class Player {
 
   late List<int> commander_damage;
 
-  Player({required this.lifepoints, required this.number_players});
-
-  void set_up() {
-    // prepare values depending on the number of players
-    for (int i = 0; i < number_players; i++) {
+  Player({required this.lifepoints, required this.number_players}) {
+    for (int i = 0; i < this.number_players; i++) {
       commander_damage.add(0);
     }
   }
