@@ -22,7 +22,7 @@ class Player {
   int green = 0;
   int blank = 0;
 
-  late List<int> commander_damage;
+  List<int> commander_damage = [];
 
   Player({required this.lifepoints, required this.number_players}) {
     for (int i = 0; i < this.number_players; i++) {
