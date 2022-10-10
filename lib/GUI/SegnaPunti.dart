@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtg/GUI/Class/Commander_tax.dart';
 import 'package:mtg/GUI/Class/LifePanel.dart';
 import 'package:mtg/Services/Players.dart';
 import 'package:mtg/GUI/Class/Storm.dart';
@@ -96,7 +97,23 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                         Commander_Panel(
                           backGround: Color.fromARGB(255, 48, 48, 48),
                           text: Color.fromARGB(255, 232, 231, 231),
+                          player: first,
                           image: "assets/Commander.svg",
+                          height: h,
+                          width: w,
+                        ),
+                        Commander_Tax(
+                          backGround: Color.fromARGB(255, 48, 48, 48),
+                          text_color: Color.fromARGB(255, 232, 231, 231),
+                          image: "assets/Commander.svg",
+                          player: first,
+                          height: h,
+                          width: w,
+                        ),
+                        Permanent_all_counters(
+                          text_color: Color.fromARGB(255, 233, 232, 197),
+                          backGround: Color.fromARGB(255, 48, 48, 48),
+                          player: first,
                           height: h,
                           width: w,
                         ),
@@ -104,6 +121,13 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                           image: "assets/Storm.svg",
                           backGround: Color.fromARGB(255, 48, 48, 48),
                           text: Color.fromARGB(255, 232, 231, 231),
+                          player: first,
+                          height: h,
+                          width: w,
+                        ),
+                        Mana_counters(
+                          text_color: Color.fromARGB(255, 233, 232, 197),
+                          backGround: Color.fromARGB(255, 48, 48, 48),
                           player: first,
                           height: h,
                           width: w,

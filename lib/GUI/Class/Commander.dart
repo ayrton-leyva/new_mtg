@@ -2,15 +2,17 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mtg/Services/Players.dart';
 
 class Commander_Panel extends StatefulWidget {
-  Commander_Panel({
-    required this.text,
-    required this.backGround,
-    required this.image,
-    required this.height,
-    required this.width,
-  });
+  Commander_Panel(
+      {required this.text,
+      required this.backGround,
+      required this.image,
+      required this.height,
+      required this.width,
+      required this.player});
+  final Player player;
   final Color text;
   final Color backGround;
   final String image;
