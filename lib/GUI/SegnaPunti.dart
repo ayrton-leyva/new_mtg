@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mtg/Services/LifePanel.dart';
 import 'package:mtg/Services/Players.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mtg/Services/Globals.dart' as globals;
 
 class SegnaPunti extends StatefulWidget {
   List<bool> players;
@@ -14,6 +15,30 @@ class SegnaPunti extends StatefulWidget {
 }
 
 class _SegnaPuntiState extends State<SegnaPunti> {
+  Player first = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player second = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player third = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player fourth = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player fifth = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player sixth = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player seventh = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
+  Player eighth = Player(
+      lifepoints: globals.life_points,
+      number_players: globals.number_of_players);
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -39,7 +64,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                       image: "assets/Black.svg",
                       backGround: Color.fromARGB(255, 48, 48, 48),
                       text: Color.fromARGB(255, 232, 231, 231),
-                      player: Player(lifepoints: 40, number_players: 1),
+                      player: first,
                       height: h,
                       width: w,
                     ),
@@ -65,7 +90,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                         image: "assets/White.svg",
                         backGround: Color.fromARGB(255, 233, 232, 197),
                         text: Color.fromARGB(255, 40, 39, 39),
-                        player: Player(lifepoints: 40, number_players: 2),
+                        player: first,
                         height: h / 2,
                         width: w,
                       ),
@@ -76,7 +101,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                       image: "assets/Black.svg",
                       backGround: Color.fromARGB(255, 48, 48, 48),
                       text: Color.fromARGB(255, 232, 231, 231),
-                      player: Player(lifepoints: 40, number_players: 2),
+                      player: second,
                       height: h / 2,
                       width: w,
                     ),
@@ -107,8 +132,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/White.svg",
                                 backGround: Color.fromARGB(255, 233, 232, 197),
                                 text: Color.fromARGB(255, 40, 39, 39),
-                                player:
-                                    Player(lifepoints: 40, number_players: 3),
+                                player: first,
                                 height: w / 2,
                                 width: h * 3 / 5,
                               ),
@@ -121,8 +145,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/Blue.svg",
                                 backGround: Color.fromARGB(255, 0, 121, 221),
                                 text: Color.fromARGB(255, 232, 231, 231),
-                                player:
-                                    Player(lifepoints: 40, number_players: 3),
+                                player: second,
                                 height: w / 2,
                                 width: h * 3 / 5,
                               ),
@@ -135,7 +158,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                       image: "assets/Black.svg",
                       backGround: Color.fromARGB(255, 48, 48, 48),
                       text: Color.fromARGB(255, 232, 231, 231),
-                      player: Player(lifepoints: 40, number_players: 3),
+                      player: third,
                       height: h * 2 / 5,
                       width: w,
                     ),
@@ -165,7 +188,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/White.svg",
                             backGround: Color.fromARGB(255, 233, 232, 197),
                             text: Color.fromARGB(255, 40, 39, 39),
-                            player: Player(lifepoints: 40, number_players: 4),
+                            player: first,
                             height: w / 2,
                             width: h / 2,
                           ),
@@ -178,7 +201,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Blue.svg",
                             backGround: Color.fromARGB(255, 0, 121, 221),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 4),
+                            player: second,
                             height: w / 2,
                             width: h / 2,
                           ),
@@ -196,7 +219,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Black.svg",
                             backGround: Color.fromARGB(255, 30, 30, 30),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 4),
+                            player: third,
                             height: w / 2,
                             width: h / 2,
                           ),
@@ -209,7 +232,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Red.svg",
                             backGround: Color.fromARGB(255, 220, 15, 0),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 4),
+                            player: fourth,
                             height: w / 2,
                             width: h / 2,
                           ),
@@ -243,8 +266,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/White.svg",
                                 backGround: Color.fromARGB(255, 233, 232, 197),
                                 text: Color.fromARGB(255, 40, 39, 39),
-                                player:
-                                    Player(lifepoints: 40, number_players: 5),
+                                player: first,
                                 height: w / 2,
                                 width: h * 7 / 20,
                               ),
@@ -257,8 +279,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/Blue.svg",
                                 backGround: Color.fromARGB(255, 0, 121, 221),
                                 text: Color.fromARGB(255, 232, 231, 231),
-                                player:
-                                    Player(lifepoints: 40, number_players: 5),
+                                player: second,
                                 height: w / 2,
                                 width: h * 7 / 20,
                               ),
@@ -278,8 +299,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/Black.svg",
                                 backGround: Color.fromARGB(255, 30, 30, 30),
                                 text: Color.fromARGB(255, 232, 231, 231),
-                                player:
-                                    Player(lifepoints: 40, number_players: 5),
+                                player: third,
                                 height: w / 2,
                                 width: h * 7 / 20,
                               ),
@@ -292,8 +312,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/Red.svg",
                                 backGround: Color.fromARGB(255, 220, 15, 0),
                                 text: Color.fromARGB(255, 232, 231, 231),
-                                player:
-                                    Player(lifepoints: 40, number_players: 5),
+                                player: fourth,
                                 height: w / 2,
                                 width: h * 7 / 20,
                               ),
@@ -306,7 +325,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                       image: "assets/Green.svg",
                       backGround: Colors.green,
                       text: Color.fromARGB(255, 232, 231, 231),
-                      player: Player(lifepoints: 40, number_players: 5),
+                      player: fifth,
                       height: h * 3 / 10,
                       width: w,
                     ),
@@ -338,8 +357,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/White.svg",
                                 backGround: Color.fromARGB(255, 233, 232, 197),
                                 text: Color.fromARGB(255, 40, 39, 39),
-                                player:
-                                    Player(lifepoints: 40, number_players: 5),
+                                player: first,
                                 height: w / 2,
                                 width: h / 3,
                               ),
@@ -352,8 +370,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                                 image: "assets/Blue.svg",
                                 backGround: Color.fromARGB(255, 0, 121, 221),
                                 text: Color.fromARGB(255, 232, 231, 231),
-                                player:
-                                    Player(lifepoints: 40, number_players: 5),
+                                player: second,
                                 height: w / 2,
                                 width: h / 3,
                               ),
@@ -373,7 +390,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                               image: "assets/Black.svg",
                               backGround: Color.fromARGB(255, 30, 30, 30),
                               text: Color.fromARGB(255, 232, 231, 231),
-                              player: Player(lifepoints: 40, number_players: 5),
+                              player: third,
                               height: w / 2,
                               width: h / 3,
                             ),
@@ -386,7 +403,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                               image: "assets/Red.svg",
                               backGround: Color.fromARGB(255, 220, 15, 0),
                               text: Color.fromARGB(255, 232, 231, 231),
-                              player: Player(lifepoints: 40, number_players: 5),
+                              player: fourth,
                               height: w / 2,
                               width: h / 3,
                             ),
@@ -405,7 +422,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Green.svg",
                             backGround: Colors.green,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: fifth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -418,7 +435,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/ColorLess.svg",
                             backGround: Colors.grey,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: sixth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -450,7 +467,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/White.svg",
                             backGround: Color.fromARGB(255, 233, 232, 197),
                             text: Color.fromARGB(255, 40, 39, 39),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: first,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -463,7 +480,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Blue.svg",
                             backGround: Color.fromARGB(255, 0, 121, 221),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: second,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -481,7 +498,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Black.svg",
                             backGround: Color.fromARGB(255, 30, 30, 30),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: third,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -494,7 +511,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Red.svg",
                             backGround: Color.fromARGB(255, 220, 15, 0),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: fourth,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -512,7 +529,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Green.svg",
                             backGround: Colors.green,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: fifth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -525,7 +542,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/ColorLess.svg",
                             backGround: Colors.grey,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: sixth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -538,7 +555,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                       image: "assets/Snow.svg",
                       backGround: Color.fromARGB(255, 255, 248, 254),
                       text: Color.fromARGB(255, 127, 124, 124),
-                      player: Player(lifepoints: 40, number_players: 5),
+                      player: seventh,
                       height: w / 2,
                       width: h * 7 / 20,
                     ),
@@ -567,7 +584,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/White.svg",
                             backGround: Color.fromARGB(255, 233, 232, 197),
                             text: Color.fromARGB(255, 40, 39, 39),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: first,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -580,7 +597,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Blue.svg",
                             backGround: Color.fromARGB(255, 0, 121, 221),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: second,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -598,7 +615,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Black.svg",
                             backGround: Color.fromARGB(255, 30, 30, 30),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: third,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -611,7 +628,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Red.svg",
                             backGround: Color.fromARGB(255, 220, 15, 0),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: fourth,
                             height: w / 2,
                             width: h / 3,
                           ),
@@ -629,7 +646,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Green.svg",
                             backGround: Colors.green,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: fifth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -642,7 +659,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/ColorLess.svg",
                             backGround: Colors.grey,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: sixth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -660,7 +677,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/Snow.svg",
                             backGround: Colors.grey,
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: seventh,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
@@ -673,7 +690,7 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                             image: "assets/BP.svg",
                             backGround: Color.fromARGB(255, 135, 0, 253),
                             text: Color.fromARGB(255, 232, 231, 231),
-                            player: Player(lifepoints: 40, number_players: 5),
+                            player: eighth,
                             height: w / 2,
                             width: h * 7 / 20,
                           ),
