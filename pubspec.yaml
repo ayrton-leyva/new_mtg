@@ -74,6 +74,7 @@ flutter:
     - assets/White.svg
     - assets/X.svg
     - assets/Storm.svg
+    - assets/Commander.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mtg/Services/LifePanel.dart';
+import 'package:mtg/GUI/Class/LifePanel.dart';
 import 'package:mtg/Services/Players.dart';
-import 'package:mtg/Services/Storm.dart';
-import 'package:mtg/Services/Commander.dart';
-import 'package:mtg/Services/Permanent_counters.dart';
-import 'package:mtg/Services/Mana_counters.dart';
+import 'package:mtg/GUI/Class/Storm.dart';
+import 'package:mtg/GUI/Class/Commander.dart';
+import 'package:mtg/GUI/Class/Permanent_counters.dart';
+import 'package:mtg/GUI/Class/Mana_counters.dart';
 import 'package:mtg/Services/Globals.dart' as globals;
 
 class SegnaPunti extends StatefulWidget {
@@ -90,6 +90,13 @@ class _SegnaPuntiState extends State<SegnaPunti> {
                           backGround: Color.fromARGB(255, 48, 48, 48),
                           text: Color.fromARGB(255, 232, 231, 231),
                           player: first,
+                          height: h,
+                          width: w,
+                        ),
+                        Commander_Panel(
+                          backGround: Color.fromARGB(255, 48, 48, 48),
+                          text: Color.fromARGB(255, 232, 231, 231),
+                          image: "assets/Commander.svg",
                           height: h,
                           width: w,
                         ),

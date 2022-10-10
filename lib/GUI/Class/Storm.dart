@@ -1,9 +1,11 @@
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:mtg/Services/Players.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class LifePanel extends StatefulWidget {
-  const LifePanel(
+class Storm extends StatefulWidget {
+  const Storm(
       {required this.height,
       required this.width,
       required this.image,
@@ -18,12 +20,11 @@ class LifePanel extends StatefulWidget {
   final String image;
   final double height;
   final double width;
-
   @override
-  State<LifePanel> createState() => _LifePanelState();
+  State<Storm> createState() => _StormState();
 }
 
-class _LifePanelState extends State<LifePanel> {
+class _StormState extends State<Storm> {
   @override
   Widget build(BuildContext context) {
     return new Stack(
@@ -36,9 +37,15 @@ class _LifePanelState extends State<LifePanel> {
         Container(
           color: widget.backGround,
           child: Center(
-            child: SvgPicture.asset(
-              widget.image,
-              height: 3 * widget.width / 5,
+            child: Container(
+              decoration: new BoxDecoration(
+                color: Color.fromARGB(255, 80, 79, 79),
+                shape: BoxShape.circle,
+              ),
+              child: SvgPicture.asset(
+                widget.image,
+                height: 3 * widget.width / 5,
+              ),
             ),
           ),
         ),
@@ -57,7 +64,7 @@ class _LifePanelState extends State<LifePanel> {
                 onTap: () {
                   print("Increase");
                   setState(() {
-                    widget.player.lifepoints += 1;
+                    widget.player.storm += 1;
                   });
                 },
               ),
@@ -75,7 +82,7 @@ class _LifePanelState extends State<LifePanel> {
                     print("Decrease");
                     setState(
                       () {
-                        widget.player.lifepoints -= 1;
+                        widget.player.storm -= 1;
                       },
                     );
                   },
@@ -84,18 +91,18 @@ class _LifePanelState extends State<LifePanel> {
         ),
         // Counter
         Center(
-          child: Text(widget.player.lifepoints.toString(),
+          child: Text(widget.player.storm.toString(),
               style: TextStyle(
                   fontSize: 100,
                   color: widget.text,
                   decoration: TextDecoration.none)),
         ),
         // Page Type
-        PositionedDirectional(
+        Positioned(
           // Vedere come fare
-          start: 2 * widget.width / 3,
+          right: 20,
           bottom: 20,
-          child: Text("Life Points",
+          child: Text("Storm Counter",
               style: TextStyle(
                   fontSize: 17,
                   color: widget.text,
