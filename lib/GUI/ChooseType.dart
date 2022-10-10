@@ -65,9 +65,61 @@ class _ChooseTypeState extends State<ChooseType> {
       body: Stack(children: <Widget>[
         Positioned(
           left: w / 4,
+          top: h * 2 / 6,
+          width: w / 2,
+          child: SizedBox(
+            height: h / 7,
+            width: w / 3,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _Life_value,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+                cursorColor: Colors.white,
+                // obscureText: true,
+                decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Colors.white),
+                    helperStyle: TextStyle(color: Colors.white),
+                    fillColor: Colors.white,
+                    hoverColor: Colors.white,
+                    focusColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(width: 1.0, color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(width: 1.0, color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    labelText: "Life"),
+                onChanged: (text) {
+                  globals.life_points = int.parse(_Life_value.text);
+                },
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          left: w / 4,
+          top: h * 3 / 6,
+          width: w / 2,
+          child: SizedBox(
+            height: h / 11,
+            width: w / 3,
+            child: Container(
+              color: Colors.white,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/SegnaPunti');
+                },
+                child: Text("Play"),
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          left: w / 4,
           top: h / 6,
-          // bottom: 10,
-          // height: 150,
           width: w / 2,
           child: Column(
             children: [
@@ -168,74 +220,7 @@ class _ChooseTypeState extends State<ChooseType> {
             ],
           ),
         ),
-        // Column(
-        //   children: <Widget>[
-        //     SizedBox(
-        //       height: h / 7,
-        //       width: w / 3,
-        //       child: Padding(
-        //         padding: const EdgeInsets.all(8.0),
-        //         child: TextField(
-        //           controller: _Life_value,
-        //           style: TextStyle(
-        //             color: Colors.white,
-        //           ),
-        //           cursorColor: Colors.white,
-        //           // obscureText: true,
-        //           decoration: InputDecoration(
-        //               labelStyle: TextStyle(color: Colors.white),
-        //               helperStyle: TextStyle(color: Colors.white),
-        //               fillColor: Colors.white,
-        //               hoverColor: Colors.white,
-        //               focusColor: Colors.white,
-        //               border: OutlineInputBorder(
-        //                   borderSide:
-        //                       BorderSide(width: 1.0, color: Colors.white),
-        //                   borderRadius: BorderRadius.all(Radius.circular(5))),
-        //               enabledBorder: OutlineInputBorder(
-        //                   borderSide:
-        //                       BorderSide(width: 1.0, color: Colors.white),
-        //                   borderRadius: BorderRadius.all(Radius.circular(5))),
-        //               labelText: "Life"),
-        //           onChanged: (text) {
-        //             globals.life_points = int.parse(_Life_value.text);
-        //           },
-        //         ),
-        //       ),
-        //     ),
-        //     SizedBox(
-        //       height: h / 11,
-        //       width: w / 3,
-        //       child: TextButton(
-        //         onPressed: () {},
-        //         child: Text("Play"),
-        //       ),
-        //     ),
-        //     // ListView(
-        //     //   children: chooser.map(buildTile).toList(),
-        //     // ),
-        //   ],
-        // ),
       ]),
     );
-  }
-
-  Widget buildTile(BasicTile tile) {
-    if (tile.list.isEmpty) {
-      return ListTile(
-        title: Text(tile.title.toString()),
-        onTap: () {
-          setState(() {
-            chooser[0].title = tile.title;
-            globals.number_of_players = tile.title;
-          });
-        },
-      );
-    } else {
-      return ExpansionTile(
-        title: Text(tile.title.toString()),
-        children: tile.list.map((tile) => buildTile(tile)).toList(),
-      );
-    }
   }
 }

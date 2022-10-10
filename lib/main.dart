@@ -30,30 +30,31 @@ void main() {
           false,
         ];
         switch (globals.number_of_players) {
-          case 0:
+          case 1:
             players[0] = true;
             break;
-          case 1:
+          case 2:
             players[1] = true;
             break;
-          case 2:
+          case 3:
             players[2] = true;
             break;
-          case 3:
+          case 4:
             players[3] = true;
             break;
-          case 4:
+          case 5:
             players[4] = true;
             break;
-          case 5:
+          case 6:
             players[5] = true;
             break;
-          case 6:
+          case 7:
             players[6] = true;
             break;
-          case 7:
+          case 8:
             players[7] = true;
             break;
+            
           default:
             players[0] = true;
             break;
