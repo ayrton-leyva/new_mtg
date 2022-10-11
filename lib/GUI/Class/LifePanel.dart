@@ -84,7 +84,7 @@ class _LifePanelState extends State<LifePanel> {
         ),
         // Counter
         Center(
-          child: Text(widget.player.lifepoints.toString(),
+          child: Text(get_life(widget.player),
               style: TextStyle(
                   fontSize: 100,
                   color: widget.text,
@@ -103,5 +103,13 @@ class _LifePanelState extends State<LifePanel> {
         ),
       ],
     );
+  }
+
+  String get_life(Player player) {
+    int life = player.lifepoints;
+    for (int i = 0; i < player.commander_damage.length; i++) {
+      life -= player.commander_damage[i];
+    }
+    return life.toString();
   }
 }

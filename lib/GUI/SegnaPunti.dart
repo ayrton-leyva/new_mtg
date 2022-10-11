@@ -57,6 +57,10 @@ class _SegnaPuntiState extends State<SegnaPunti> {
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
+    if (widget.players[0]) {
+      first =
+          first = Player(lifepoints: globals.life_points, number_players: 8);
+    }
     return Container(
       child: new Stack(
         children: <Widget>[
