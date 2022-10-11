@@ -15,6 +15,7 @@ class Single_Counter extends StatefulWidget {
     required this.type,
     required this.mash_color,
     required this.text_color,
+    required this.text_size,
   });
   late double x;
   late double y;
@@ -25,6 +26,7 @@ class Single_Counter extends StatefulWidget {
   late String type;
   late Color mash_color;
   late Color text_color;
+  late double text_size;
 
   @override
   State<Single_Counter> createState() => _Single_CounterState();
@@ -38,6 +40,9 @@ class _Single_CounterState extends State<Single_Counter> {
       height: widget.height,
       child: Stack(
         children: <Widget>[
+          Container(
+            color: widget.mash_color,
+          ),
           Positioned(
             left: widget.x,
             bottom: widget.y,
@@ -52,7 +57,7 @@ class _Single_CounterState extends State<Single_Counter> {
             child: Text(
               switcher_text(widget.player, widget.type),
               style: TextStyle(
-                  fontSize: 100,
+                  fontSize: widget.text_size,
                   color: widget.text_color,
                   decoration: TextDecoration.none),
             ),
