@@ -5,19 +5,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mtg/Services/Players.dart';
 
 class Commander_Panel extends StatefulWidget {
-  Commander_Panel(
-      {required this.text,
-      required this.backGround,
-      required this.image,
-      required this.height,
-      required this.width,
-      required this.player});
+  Commander_Panel({
+    required this.text,
+    required this.backGround,
+    required this.image,
+    required this.height,
+    required this.width,
+    required this.player,
+    required this.children,
+  });
   final Player player;
   final Color text;
   final Color backGround;
   final String image;
   final double height;
   final double width;
+  final List<Widget> children;
   @override
   State<Commander_Panel> createState() => _Commander_PanelState();
 }
@@ -25,7 +28,7 @@ class Commander_Panel extends StatefulWidget {
 class _Commander_PanelState extends State<Commander_Panel> {
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
+    List<Widget> Current = [
       Container(
         color: widget.backGround,
       ),
@@ -59,6 +62,8 @@ class _Commander_PanelState extends State<Commander_Panel> {
                 color: widget.text,
                 decoration: TextDecoration.none)),
       ),
-    ]);
+    ];
+    Current.addAll(widget.children);
+    return Stack(children: Current);
   }
 }

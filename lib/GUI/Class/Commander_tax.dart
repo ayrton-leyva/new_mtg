@@ -101,11 +101,13 @@ class _Commander_TaxState extends State<Commander_Tax> {
                   ),
                   onTap: () {
                     print("Decrease");
-                    setState(
-                      () {
-                        widget.player.command_tax -= 2;
-                      },
-                    );
+                    if (widget.player.command_tax > 0) {
+                      setState(
+                        () {
+                          widget.player.command_tax -= 2;
+                        },
+                      );
+                    }
                   },
                 )),
           ],

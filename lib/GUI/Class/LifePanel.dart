@@ -110,6 +110,10 @@ class _LifePanelState extends State<LifePanel> {
     for (int i = 0; i < player.commander_damage.length; i++) {
       life -= player.commander_damage[i];
     }
-    return life.toString();
+    if (life > 0) {
+      return life.toString();
+    } else {
+      return "You dead Nigga";
+    }
   }
 }

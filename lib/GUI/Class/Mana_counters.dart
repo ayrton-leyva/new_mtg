@@ -9,9 +9,7 @@ class Mana_counters extends StatefulWidget {
       required this.backGround,
       required this.height,
       required this.width,
-      required this.player,
       required this.children});
-  final Player player;
   final Color text_color;
   final Color backGround;
   final double height;

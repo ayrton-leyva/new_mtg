@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Player {
+  int player_position;
   int number_players;
   int lifepoints;
   int command_tax = 0;
@@ -22,13 +23,21 @@ class Player {
   int green = 0;
   int blank = 0;
 
-  List<int> commander_damage = [];
+  List<int> commander_damage = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+  ];
 
-  Player({required this.lifepoints, required this.number_players}) {
-    for (int i = 0; i < this.number_players; i++) {
-      commander_damage.add(0);
-    }
-  }
+  Player(
+      {required this.lifepoints,
+      required this.number_players,
+      required this.player_position});
 
   void reset_game() {
     // Special counters

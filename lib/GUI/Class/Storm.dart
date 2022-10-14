@@ -12,8 +12,9 @@ class Storm extends StatefulWidget {
       required this.player,
       required this.backGround,
       required this.text,
+      required this.circle_color,
       super.key});
-
+  final Color circle_color;
   final Color backGround;
   final Color text;
   final Player player;
@@ -39,7 +40,7 @@ class _StormState extends State<Storm> {
           child: Center(
             child: Container(
               decoration: new BoxDecoration(
-                color: Color.fromARGB(255, 80, 79, 79),
+                color: widget.circle_color,
                 shape: BoxShape.circle,
               ),
               child: SvgPicture.asset(
@@ -80,11 +81,13 @@ class _StormState extends State<Storm> {
                   ),
                   onTap: () {
                     print("Decrease");
-                    setState(
-                      () {
-                        widget.player.storm -= 1;
-                      },
-                    );
+                    if (widget.player.storm > 0) {
+                      setState(
+                        () {
+                          widget.player.storm -= 1;
+                        },
+                      );
+                    }
                   },
                 )),
           ],
