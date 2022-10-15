@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'package:mtg/Services/Globals.dart' as globals;
 
 class OpeningPage extends StatefulWidget {

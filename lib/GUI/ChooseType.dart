@@ -1,7 +1,4 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:mtg/GUI/ChooseType.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'package:mtg/Services/Globals.dart' as globals;
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 // ca-app-pub-2443681598063662/7488107899

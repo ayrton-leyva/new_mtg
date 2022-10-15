@@ -6,7 +6,6 @@ import 'package:mtg/GUI/Class/Storm.dart';
 import 'package:mtg/GUI/Class/Commander.dart';
 import 'package:mtg/GUI/Class/Permanent_counters.dart';
 import 'package:mtg/GUI/Class/Mana_counters.dart';
-import 'package:mtg/Services/Globals.dart' as globals;
 import 'package:mtg/GUI/Class/Single_Panel_Counter.dart';
 
 class Player_1_widget extends StatelessWidget {

@@ -1,8 +1,4 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mtg/GUI/Class/Single_Panel_Counter.dart';
 import 'package:mtg/Services/Players.dart';
 
 class Permanent_all_counters extends StatefulWidget {
